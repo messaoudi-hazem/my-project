@@ -4,8 +4,16 @@ import { Component, signal } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.html',
   standalone: false,
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('my-project');
+  currentView: 'home' | 'suggestions' = 'home';
+
+  showHome() {
+    this.currentView = 'home';
+  }
+
+  showSuggestions() {
+    this.currentView = 'suggestions';
+  }
 }
